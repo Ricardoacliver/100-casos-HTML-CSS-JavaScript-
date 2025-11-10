@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 61 - Números Perfeitos</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Verificar se um número é perfeito</h2>
+<input type="number" id="num" placeholder="Digite um número">
+<br>
+<button onclick="verificar()">Verificar</button>
+<p id="resultado"></p>
+
+<script>
+function verificar(){
+  const n=parseInt(document.getElementById("num").value);
+  if(isNaN(n)||n<=0){document.getElementById("resultado").innerText="Digite um número válido.";return;}
+  let soma=0;
+  for(let i=1;i<n;i++){if(n%i===0)soma+=i;}
+  document.getElementById("resultado").innerText=soma===n?`${n} é perfeito!`:`${n} não é perfeito.`;
+}
+</script>
+</body>
+</html>

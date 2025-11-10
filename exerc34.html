@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 34 - Média de Idades e Alturas</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Média de Idades e Alturas</h2>
+<input type="text" id="dados" placeholder="Ex: 18,1.65; 21,1.80; ...">
+<br>
+<button onclick="calcular()">Calcular</button>
+<p id="resultado"></p>
+
+<script>
+function calcular(){
+  const alunos=document.getElementById("dados").value.split(";").map(v=>v.trim()).filter(v=>v);
+  if(alunos.length===0){document.getElementById("resultado").innerText="Insira os dados.";return;}
+  let somaIdade20=0,qtd20=0,somaAlt170=0,qtd170=0;
+  alunos.forEach(a=>{
+    let [idade,altura]=a.split(",").map(x=>parseFloat(x.trim()));
+    if(altura<1.7){somaIdade20+=idade;qtd170++;}
+    if(idade>20){somaAlt170+=altura;qtd20++;}
+  });
+  document.getElementById("resultado").innerHTML=
+    `Média de idade (<1.70m): ${(qtd170?somaIdade20/qtd170:0).toFixed(2)}<br>
+     Média de altura (>20 anos): ${(qtd20?somaAlt170/qtd20:0).toFixed(2)}`;
+}
+</script>
+</body>
+</html>

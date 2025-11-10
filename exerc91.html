@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 91</title>
+</head>
+<body>
+  <input type="number" id="num" placeholder="Digite um número">
+  <button onclick="quadrado()">Calcular quadrado</button>
+  <p id="resultado"></p>
+
+  <script>
+    function quadrado() {
+      const n = Number(document.getElementById("num").value);
+      document.getElementById("resultado").innerText = "Resultado: " + (n * n);
+    }
+  </script>
+</body>
+</html>

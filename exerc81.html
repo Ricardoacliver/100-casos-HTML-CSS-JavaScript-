@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 81</title>
+  <style>
+    body {
+      text-align: center;
+      padding-top: 50px;
+      transition: background 0.3s;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="mudarCor()">Mudar cor</button>
+
+  <script>
+    function mudarCor() {
+      const cores = ["#ff6b6b", "#1dd1a1", "#54a0ff", "#feca57", "#5f27cd"];
+      const aleatoria = cores[Math.floor(Math.random() * cores.length)];
+      document.body.style.background = aleatoria;
+    }
+  </script>
+</body>
+</html>

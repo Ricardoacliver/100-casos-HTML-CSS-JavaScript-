@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 51 - Média de Salários</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    textarea,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Média de Salários (Digite 'fim' para parar)</h2>
+<textarea id="entrada" placeholder="Ex: Ana,2500; João,3000; fim"></textarea>
+<br>
+<button onclick="calcular()">Calcular</button>
+<p id="resultado"></p>
+
+<script>
+function calcular(){
+  const linhas=document.getElementById("entrada").value.split(";").map(v=>v.trim().toLowerCase()).filter(v=>v);
+  let total=0,count=0;
+  for(let l of linhas){
+    if(l==="fim")break;
+    let partes=l.split(",");
+    let salario=parseFloat(partes[1]);
+    if(!isNaN(salario)){total+=salario;count++;}
+  }
+  document.getElementById("resultado").innerText=count>0?`Média salarial: R$${(total/count).toFixed(2)}`:"Nenhum salário válido informado.";
+}
+</script>
+</body>
+</html>

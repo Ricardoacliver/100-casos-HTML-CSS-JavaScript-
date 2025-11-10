@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 40 - Multiplicação sem *</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Multiplicação sem o operador *</h2>
+<input type="number" id="a" placeholder="Número 1">
+<input type="number" id="b" placeholder="Número 2">
+<br>
+<button onclick="multiplicar()">Calcular</button>
+<p id="resultado"></p>
+
+<script>
+function multiplicar(){
+  const a=parseInt(document.getElementById("a").value);
+  const b=parseInt(document.getElementById("b").value);
+  if(isNaN(a)||isNaN(b)){document.getElementById("resultado").innerText="Informe dois números válidos.";return;}
+  let soma=0;
+  for(let i=0;i<Math.abs(b);i++) soma+=Math.abs(a);
+  if((a<0&&b>0)||(a>0&&b<0)) soma=-soma;
+  document.getElementById("resultado").innerText=`Resultado: ${soma}`;
+}
+</script>
+</body>
+</html>

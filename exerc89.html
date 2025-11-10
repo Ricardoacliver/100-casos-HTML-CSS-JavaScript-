@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 89</title>
+</head>
+<body>
+  <input type="text" id="texto" placeholder="Digite algo">
+  <button onclick="contar()">Contar letras</button>
+  <p id="resultado"></p>
+
+  <script>
+    function contar() {
+      const texto = document.getElementById("texto").value;
+      document.getElementById("resultado").innerText =
+        "Total de letras: " + texto.length;
+    }
+  </script>
+</body>
+</html>

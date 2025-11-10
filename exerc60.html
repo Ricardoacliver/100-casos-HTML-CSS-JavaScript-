@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 60 - Sequência Invertida</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Sequência Invertida</h2>
+<input type="number" id="num" placeholder="Digite um número N">
+<br>
+<button onclick="inverter()">Mostrar Sequência</button>
+<p id="resultado"></p>
+
+<script>
+function inverter(){
+  const n=parseInt(document.getElementById("num").value);
+  if(isNaN(n)||n<=0){document.getElementById("resultado").innerText="Digite um número positivo.";return;}
+  let lista=[];
+  for(let i=n;i>=1;i--)lista.push(i);
+  document.getElementById("resultado").innerText=lista.join(", ");
+}
+</script>
+</body>
+</html>

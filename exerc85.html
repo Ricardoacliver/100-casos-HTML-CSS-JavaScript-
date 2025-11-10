@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 85</title>
+</head>
+<body>
+  <p id="texto">Texto secreto!</p>
+  <button onclick="alternar()">Mostrar/Ocultar</button>
+
+  <script>
+    function alternar() {
+      const txt = document.getElementById("texto");
+      txt.style.display = (txt.style.display === "none") ? "block" : "none";
+    }
+  </script>
+</body>
+</html>

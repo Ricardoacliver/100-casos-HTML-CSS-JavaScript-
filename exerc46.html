@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 46 - Soma 1 a 10 (do..while)</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Soma de 1 a 10 usando do..while</h2>
+<button onclick="somar()">Calcular</button>
+<p id="resultado"></p>
+
+<script>
+function somar(){
+  let i=1,soma=0;
+  do{soma+=i;i++;}while(i<=10);
+  document.getElementById("resultado").innerText=`Soma = ${soma}`;
+}
+</script>
+</body>
+</html>

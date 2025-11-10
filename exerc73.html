@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ex 73 - Fatorial</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px}
+    input,button{padding:8px;margin:6px}
+  </style>
+</head>
+<body>
+
+  <h2>Ex 73 — Calcular Fatorial</h2>
+  <input type="number" id="num" placeholder="Digite um número">
+  <button onclick="fatorial()">Calcular</button>
+  <p id="res"></p>
+
+  <script>
+    function fatorial(){
+      let n = parseInt(num.value);
+      if(n < 0){ res.innerText = "Número inválido"; return; }
+      let fat = 1;
+      for(let i=1;i<=n;i++) fat *= i;
+      res.innerText = `Fatorial de ${n} = ${fat}`;
+    }
+  </script>
+
+</body>
+</html>

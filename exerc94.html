@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 94</title>
+</head>
+<body>
+  <input type="text" id="texto" placeholder="Digite algo">
+  <button onclick="converter()">Converter</button>
+  <p id="resultado"></p>
+
+  <script>
+    function converter() {
+      const texto = document.getElementById("texto").value;
+      document.getElementById("resultado").innerText = texto.toUpperCase();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 35 - Tabuada até 13</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Tabuada até 13</h2>
+<input type="number" id="num" placeholder="Digite um número">
+<br>
+<button onclick="tabuada()">Gerar Tabuada</button>
+<p id="resultado"></p>
+
+<script>
+function tabuada(){
+  const n=parseInt(document.getElementById("num").value);
+  if(isNaN(n)){document.getElementById("resultado").innerText="Informe um número válido.";return;}
+  let out="";
+  for(let i=1;i<=13;i++) out+=`${n} x ${i} = ${n*i}<br>`;
+  document.getElementById("resultado").innerHTML=out;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ex 78 - Tabuada</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px}
+    input,button{padding:8px;margin:6px}
+    p{white-space:pre-line}
+  </style>
+</head>
+<body>
+
+  <h2>Ex 78 — Tabuada</h2>
+  <input type="number" id="n" placeholder="Digite o número">
+  <button onclick="tabuada()">Gerar</button>
+  <p id="res"></p>
+
+  <script>
+    function tabuada(){
+      let n = parseInt(document.getElementById("n").value);
+      let out = "";
+      for(let i=1;i<=10;i++) out += `${n} x ${i} = ${n*i}\n`;
+      res.innerText = out;
+    }
+  </script>
+
+</body>
+</html>

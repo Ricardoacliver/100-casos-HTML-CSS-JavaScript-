@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 13 - Média de Notas</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Média e Aprovação</h2>
+  <input type="number" id="n1" placeholder="Nota 1">
+  <input type="number" id="n2" placeholder="Nota 2">
+  <input type="number" id="n3" placeholder="Nota 3">
+  <br>
+  <button onclick="calcular()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcular() {
+      let n1 = parseFloat(document.getElementById("n1").value);
+      let n2 = parseFloat(document.getElementById("n2").value);
+      let n3 = parseFloat(document.getElementById("n3").value);
+      let media = (n1 + n2 + n3) / 3;
+      let msg = media >= 10 ? "Aprovado" : "Reprovado";
+      document.getElementById("resultado").innerHTML = `Média: ${media.toFixed(2)} - ${msg}`;
+    }
+  </script>
+
+</body>
+</html>

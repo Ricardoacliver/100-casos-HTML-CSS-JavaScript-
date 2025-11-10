@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 28 – Soma / Contagem</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Soma dos Positivos e Quantidade de Negativos</h2>
+<input type="text" id="valores" placeholder="Digite 50 valores separados por vírgula">
+<br>
+<button onclick="calcular()">Calcular</button>
+<p id="resultado"></p>
+
+<script>
+function calcular(){
+  const lista=document.getElementById("valores").value.split(",").map(v=>parseFloat(v.trim())).filter(v=>!isNaN(v));
+  if(lista.length===0){document.getElementById("resultado").innerText="Digite valores válidos.";return;}
+  const somaPos=lista.filter(v=>v>0).reduce((a,b)=>a+b,0);
+  const qtdNeg=lista.filter(v=>v<0).length;
+  document.getElementById("resultado").innerHTML=`Soma dos positivos: ${somaPos}<br>Quantidade de negativos: ${qtdNeg}`;
+}
+</script>
+</body>
+</html>

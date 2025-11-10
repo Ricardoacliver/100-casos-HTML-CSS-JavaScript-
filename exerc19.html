@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 19 - Análise de String</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Análise de String</h2>
+  <input type="text" id="texto" placeholder="Digite um texto">
+  <br>
+  <button onclick="analisar()">Analisar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function analisar() {
+      let txt = document.getElementById("texto").value;
+      if (txt.trim() === "") {
+        document.getElementById("resultado").innerText = "Digite um texto!";
+        return;
+      }
+
+      let vogais = txt.match(/[aeiouáéíóúàãõâêîôû]/gi);
+      let digitos = txt.match(/\d/g);
+      let letras = txt.replace(/[\W_]/g, "").toLowerCase();
+      let palindromo = letras === letras.split("").reverse().join("");
+
+      document.getElementById("resultado").innerHTML = `
+        Número de caracteres: ${txt.length}<br>
+        Maiúsculas: ${txt.toUpperCase()}<br>
+        Vogais: ${vogais ? vogais.length : 0}<br>
+        Começa com "UNI": ${txt.toUpperCase().startsWith("UNI") ? "Sim" : "Não"}<br>
+        Termina com "RIO": ${txt.toUpperCase().endsWith("RIO") ? "Sim" : "Não"}<br>
+        Dígitos: ${digitos ? digitos.length : 0}<br>
+        Palíndromo: ${palindromo ? "Sim" : "Não"}
+      `;
+    }
+  </script>
+
+</body>
+</html>

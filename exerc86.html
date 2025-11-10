@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 86</title>
+</head>
+<body>
+  <input type="number" id="num" placeholder="Digite um número">
+  <button onclick="verificar()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function verificar() {
+      const n = Number(document.getElementById("num").value);
+      document.getElementById("resultado").innerText =
+        (n % 2 === 0) ? "Número par" : "Número ímpar";
+    }
+  </script>
+</body>
+</html>

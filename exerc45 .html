@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 45 - Pares e Ímpares</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Contagem de Pares e Ímpares</h2>
+<input type="text" id="nums" placeholder="Digite números separados por vírgula">
+<br>
+<button onclick="contar()">Contar</button>
+<p id="resultado"></p>
+
+<script>
+function contar(){
+  const arr=document.getElementById("nums").value.split(",").map(v=>parseInt(v.trim())).filter(v=>!isNaN(v));
+  if(arr.length===0){document.getElementById("resultado").innerText="Digite pelo menos um número.";return;}
+  let pares=0,impares=0;
+  for(let n of arr){if(n===9999)break;if(n%2===0)pares++;else impares++;}
+  document.getElementById("resultado").innerHTML=`Pares: ${pares}<br>Ímpares: ${impares}`;
+}
+</script>
+</body>
+</html>

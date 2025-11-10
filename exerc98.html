@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 98</title>
+</head>
+<body>
+  <input type="number" id="a" placeholder="Número 1">
+  <input type="number" id="b" placeholder="Número 2">
+  <button onclick="media()">Calcular média</button>
+  <p id="resultado"></p>
+
+  <script>
+    function media() {
+      const a = Number(document.getElementById("a").value);
+      const b = Number(document.getElementById("b").value);
+      document.getElementById("resultado").innerText = "Média = " + ((a + b) / 2);
+    }
+  </script>
+</body>
+</html>

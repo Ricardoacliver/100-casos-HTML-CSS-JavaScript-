@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 57 - Positivos e Negativos</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Contar Positivos e Negativos</h2>
+<input type="text" id="nums" placeholder="Digite valores separados por vírgula">
+<br>
+<button onclick="contar()">Contar</button>
+<p id="resultado"></p>
+
+<script>
+function contar(){
+  const arr=document.getElementById("nums").value.split(",").map(v=>parseFloat(v.trim())).filter(v=>!isNaN(v));
+  if(arr.length===0){document.getElementById("resultado").innerText="Digite valores válidos.";return;}
+  const pos=arr.filter(v=>v>0).length;
+  const neg=arr.filter(v=>v<0).length;
+  document.getElementById("resultado").innerText=`Positivos: ${pos} | Negativos: ${neg}`;
+}
+</script>
+</body>
+</html>

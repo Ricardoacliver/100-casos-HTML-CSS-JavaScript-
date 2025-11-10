@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 12 - Inverter Texto</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Inverter Texto</h2>
+  <input type="text" id="texto" placeholder="Digite algo">
+  <button onclick="inverter()">Inverter</button>
+  <p id="resultado"></p>
+
+  <script>
+    function inverter() {
+      let texto = document.getElementById("texto").value;
+      let invertido = texto.split("").reverse().join("");
+      document.getElementById("resultado").innerHTML = invertido;
+    }
+  </script>
+
+</body>
+</html>

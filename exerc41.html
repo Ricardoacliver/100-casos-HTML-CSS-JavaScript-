@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 41 - Fibonacci</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Série de Fibonacci (20 Termos)</h2>
+<button onclick="gerar()">Gerar Série</button>
+<p id="resultado"></p>
+
+<script>
+function gerar(){
+  let a=0,b=1,serie=[a,b];
+  for(let i=2;i<20;i++){let c=a+b;serie.push(c);a=b;b=c;}
+  document.getElementById("resultado").innerText=serie.join(", ");
+}
+</script>
+</body>
+</html>

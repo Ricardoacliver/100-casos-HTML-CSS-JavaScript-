@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 100</title>
+</head>
+<body>
+  <input type="text" id="item" placeholder="Digite um item">
+  <button onclick="adicionar()">Adicionar</button>
+  <ul id="lista"></ul>
+
+  <script>
+    function adicionar() {
+      const texto = document.getElementById("item").value.trim();
+      if (texto) {
+        const li = document.createElement("li");
+        li.textContent = texto;
+        document.getElementById("lista").appendChild(li);
+        document.getElementById("item").value = "";
+      }
+    }
+  </script>
+</body>
+</html>

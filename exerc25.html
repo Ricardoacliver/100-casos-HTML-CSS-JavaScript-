@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 25 - Média e Percentagem</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Média e Percentagem de Valores</h2>
+  <input type="text" id="numeros" placeholder="Digite valores separados por vírgula">
+  <br>
+  <button onclick="analisar()">Analisar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function analisar() {
+      let lista = document.getElementById("numeros").value
+        .split(",").map(n => parseFloat(n.trim())).filter(n => !isNaN(n));
+      if (lista.length === 0) {
+        document.getElementById("resultado").innerText = "Digite pelo menos um valor!";
+        return;
+      }
+
+      let positivos = lista.filter(n => n > 0).length;
+      let negativos = lista.filter(n => n < 0).length;
+      let media = lista.reduce((a, b) => a + b, 0) / lista.length;
+
+      document.getElementById("resultado").innerHTML = `
+        Média: ${media.toFixed(2)}<br>
+        Positivos: ${positivos} (${(positivos/lista.length*100).toFixed(1)}%)<br>
+        Negativos: ${negativos} (${(negativos/lista.length*100).toFixed(1)}%)
+      `;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 52 - Divisões Sucessivas</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Divisões Sucessivas até < 1</h2>
+<input type="number" id="num" placeholder="Número inicial">
+<br>
+<button onclick="dividir()">Executar</button>
+<p id="resultado"></p>
+
+<script>
+function dividir(){
+  let n=parseFloat(document.getElementById("num").value);
+  if(isNaN(n)||n<=0){document.getElementById("resultado").innerText="Digite um número válido.";return;}
+  let count=0;
+  while(n>=1){n/=2;count++;}
+  document.getElementById("resultado").innerText=`Dividido ${count} vezes até ficar menor que 1. Valor final: ${n.toFixed(4)}`;
+}
+</script>
+</body>
+</html>

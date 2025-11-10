@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 97</title>
+</head>
+<body>
+  <button onclick="mostrarData()">Mostrar data</button>
+  <p id="resultado"></p>
+
+  <script>
+    function mostrarData() {
+      const hoje = new Date();
+      document.getElementById("resultado").innerText = hoje.toLocaleDateString();
+    }
+  </script>
+</body>
+</html>

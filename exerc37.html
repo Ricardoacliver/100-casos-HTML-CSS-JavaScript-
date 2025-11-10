@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 37 - 10 Números Inteiros</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>10 Números - Média, Maior e Menor</h2>
+<input type="text" id="nums" placeholder="Digite 10 números separados por vírgula">
+<br>
+<button onclick="analisar()">Calcular</button>
+<p id="resultado"></p>
+
+<script>
+function analisar(){
+  const arr=document.getElementById("nums").value.split(",").map(n=>parseFloat(n.trim())).filter(n=>!isNaN(n));
+  if(arr.length!==10){document.getElementById("resultado").innerText="Digite exatamente 10 números.";return;}
+  const media=arr.reduce((a,b)=>a+b,0)/arr.length;
+  document.getElementById("resultado").innerHTML=`Média: ${media.toFixed(2)}<br>Maior: ${Math.max(...arr)}<br>Menor: ${Math.min(...arr)}`;
+}
+</script>
+</body>
+</html>

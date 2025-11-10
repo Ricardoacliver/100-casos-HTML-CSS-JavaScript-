@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 43 - Maior Número (Sentinela)</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Maior Número até 9999</h2>
+<input type="text" id="nums" placeholder="Digite números separados por vírgula">
+<br>
+<button onclick="encontrar()">Verificar</button>
+<p id="resultado"></p>
+
+<script>
+function encontrar(){
+  const arr=document.getElementById("nums").value.split(",").map(v=>parseFloat(v.trim())).filter(v=>!isNaN(v));
+  if(arr.length===0){document.getElementById("resultado").innerText="Digite números válidos.";return;}
+  let maior=-Infinity;
+  for(let n of arr){if(n===9999) break;if(n>maior) maior=n;}
+  document.getElementById("resultado").innerText=`Maior número informado: ${maior}`;
+}
+</script>
+</body>
+</html>

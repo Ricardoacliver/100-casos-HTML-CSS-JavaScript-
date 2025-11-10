@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 31 - Soma dos Pares com do..while</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Soma dos Números Pares (1 a 100)</h2>
+  <button onclick="somarPares()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function somarPares() {
+      let i = 1;
+      let soma = 0;
+      do {
+        if (i % 2 === 0) soma += i;
+        i++;
+      } while (i <= 100);
+      document.getElementById("resultado").innerText = `A soma dos números pares de 1 a 100 é: ${soma}`;
+    }
+  </script>
+
+</body>
+</html>

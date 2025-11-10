@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 47 - Restaurante Universitário</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Uso do Restaurante Universitário</h2>
+<input type="text" id="usos" placeholder="Ex: 2,3,11,12,21,22,23">
+<br>
+<button onclick="analisar()">Calcular Percentuais</button>
+<p id="resultado"></p>
+
+<script>
+function analisar(){
+  const arr=document.getElementById("usos").value.split(",").map(v=>parseInt(v.trim())).filter(v=>!isNaN(v));
+  if(arr.length===0){document.getElementById("resultado").innerText="Insira os dados corretamente.";return;}
+  const total=arr.length;
+  const a=arr.filter(v=>v<10).length;
+  const b=arr.filter(v=>v>=10&&v<=15).length;
+  const c=arr.filter(v=>v>15).length;
+  document.getElementById("resultado").innerHTML=
+    `<b>Percentuais:</b><br>
+    Menos de 10 vezes: ${(a/total*100).toFixed(1)}%<br>
+    Entre 10 e 15 vezes: ${(b/total*100).toFixed(1)}%<br>
+    Mais de 15 vezes: ${(c/total*100).toFixed(1)}%`;
+}
+</script>
+</body>
+</html>

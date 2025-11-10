@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 53 - Soma Pares 50 a 70</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Soma dos Números Pares entre 50 e 70</h2>
+<button onclick="somar()">Calcular</button>
+<p id="resultado"></p>
+
+<script>
+function somar(){
+  let soma=0;
+  for(let i=50;i<=70;i++){if(i%2===0)soma+=i;}
+  document.getElementById("resultado").innerText=`Soma = ${soma}`;
+}
+</script>
+</body>
+</html>

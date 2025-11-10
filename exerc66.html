@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 66 - Fatoriais até N</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Fatoriais de 1 até N</h2>
+<input type="number" id="n" placeholder="Digite N">
+<br>
+<button onclick="gerar()">Gerar Fatoriais</button>
+<p id="resultado"></p>
+
+<script>
+function gerar(){
+  const n=parseInt(document.getElementById("n").value);
+  if(isNaN(n)||n<=0){document.getElementById("resultado").innerText="Digite um número positivo.";return;}
+  let res="";
+  for(let i=1;i<=n;i++){
+    let fat=1;
+    for(let j=1;j<=i;j++)fat*=j;
+    res+=`${i}! = ${fat}<br>`;
+  }
+  document.getElementById("resultado").innerHTML=res;
+}
+</script>
+</body>
+</html>

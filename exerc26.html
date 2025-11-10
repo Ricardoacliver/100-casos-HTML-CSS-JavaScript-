@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 26 - Salários de Professores</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Salários dos Professores</h2>
+  <p>Insira no formato: código,sexo(M/F),horas; ...</p>
+  <input type="text" id="dados" placeholder="Ex: 1,M,40; 2,F,30; 99999 para parar">
+  <br>
+  <button onclick="calcular()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcular() {
+      let entradas = document.getElementById("dados").value.split(";");
+      let homens = [], mulheres = [];
+
+      entradas.forEach(e => {
+        let [cod, sexo, horas] = e.split(",").map(v => v.trim());
+        if (cod === "99999" || !cod) return;
+        horas = parseFloat(horas);
+        let bruto = horas * 30;
+        let liquido = sexo.toUpperCase() === "M" ? bruto * 0.9 : bruto * 0.95;
+        if (sexo.toUpperCase() === "M") homens.push(liquido);
+        else if (sexo.toUpperCase() === "F") mulheres.push(liquido);
+      });
+
+      let mediaH = homens.length ? (homens.reduce((a,b)=>a+b,0)/homens.length).toFixed(2) : 0;
+      let mediaM = mulheres.length ? (mulheres.reduce((a,b)=>a+b,0)/mulheres.length).toFixed(2) : 0;
+
+      document.getElementById("resultado").innerHTML = `
+        Média salário líquido (Homens): R$ ${mediaH}<br>
+        Média salário líquido (Mulheres): R$ ${mediaM}
+      `;
+    }
+  </script>
+
+</body>
+</html>

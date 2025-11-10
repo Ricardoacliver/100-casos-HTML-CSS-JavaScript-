@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 5 - Positivo, Negativo ou Zero</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Verificar Número</h2>
+  <input type="number" id="num" placeholder="Digite um número">
+  <button onclick="verificarNumero()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function verificarNumero() {
+      let n = parseFloat(document.getElementById("num").value);
+      let resultado = n > 0 ? "Positivo" : n < 0 ? "Negativo" : "Zero";
+      document.getElementById("resultado").innerHTML = resultado;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 15 - Ordenar Lista de Nomes</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Ordenar Lista de Nomes</h2>
+  <input type="text" id="nomes" placeholder="Digite nomes separados por vírgula">
+  <br>
+  <button onclick="ordenar()">Ordenar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function ordenar() {
+      let entrada = document.getElementById("nomes").value;
+      if (entrada.trim() === "") {
+        document.getElementById("resultado").innerText = "Por favor, insira pelo menos um nome!";
+        return;
+      }
+
+      let lista = entrada.split(",").map(n => n.trim()).filter(n => n !== "");
+      lista.sort((a, b) => a.localeCompare(b, 'pt-BR'));
+
+      document.getElementById("resultado").innerHTML = 
+        "Ordem alfabética:<br>" + lista.join("<br>");
+    }
+  </script>
+
+</body>
+</html>

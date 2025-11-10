@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 7 - Números Pares</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Mostrar Números Pares até N</h2>
+  <input type="number" id="num" placeholder="Digite um número">
+  <button onclick="mostrarPares()">Mostrar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function mostrarPares() {
+      let n = parseInt(document.getElementById("num").value);
+      let pares = [];
+      for (let i = 2; i <= n; i += 2) {
+        pares.push(i);
+      }
+      document.getElementById("resultado").innerHTML = pares.join(", ");
+    }
+  </script>
+
+</body>
+</html>

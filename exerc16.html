@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 16 - Crescimento Populacional</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Crescimento Populacional</h2>
+  <input type="number" id="popA" placeholder="População A (ex: 80000)">
+  <input type="number" id="taxA" placeholder="Taxa A (%) (ex: 3)">
+  <br>
+  <input type="number" id="popB" placeholder="População B (ex: 200000)">
+  <input type="number" id="taxB" placeholder="Taxa B (%) (ex: 1.5)">
+  <br>
+  <button onclick="calcular()">Calcular Anos</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcular() {
+      let popA = parseFloat(document.getElementById("popA").value);
+      let popB = parseFloat(document.getElementById("popB").value);
+      let taxA = parseFloat(document.getElementById("taxA").value) / 100;
+      let taxB = parseFloat(document.getElementById("taxB").value) / 100;
+
+      if (isNaN(popA) || isNaN(popB) || isNaN(taxA) || isNaN(taxB)) {
+        document.getElementById("resultado").innerText = "Preencha todos os campos corretamente!";
+        return;
+      }
+
+      let anos = 0;
+      while (popA < popB) {
+        popA += popA * taxA;
+        popB += popB * taxB;
+        anos++;
+      }
+
+      document.getElementById("resultado").innerHTML = 
+        `Serão necessários ${anos} anos para que a população de A ultrapasse ou iguale a de B.<br>
+        População A: ${Math.round(popA)}<br>
+        População B: ${Math.round(popB)}`;
+    }
+  </script>
+
+</body>
+</html>

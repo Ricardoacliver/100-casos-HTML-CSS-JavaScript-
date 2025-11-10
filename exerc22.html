@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 22 - Maior Valor e Posição</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Maior Valor e Posição</h2>
+  <input type="text" id="numeros" placeholder="Digite 20 números separados por vírgula">
+  <br>
+  <button onclick="verificar()">Verificar Maior</button>
+  <p id="resultado"></p>
+
+  <script>
+    function verificar() {
+      let entrada = document.getElementById("numeros").value;
+      let lista = entrada.split(",").map(n => parseFloat(n.trim())).filter(n => !isNaN(n) && n > 0);
+
+      if (lista.length !== 20) {
+        document.getElementById("resultado").innerText = "Digite exatamente 20 números positivos!";
+        return;
+      }
+
+      let maior = Math.max(...lista);
+      let pos = lista.indexOf(maior) + 1;
+
+      document.getElementById("resultado").innerHTML = 
+        `Maior valor: ${maior}<br>Posição: ${pos}º`;
+    }
+  </script>
+
+</body>
+</html>

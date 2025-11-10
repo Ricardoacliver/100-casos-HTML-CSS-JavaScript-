@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ex 71 - Número Primo</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px}
+    input,button{padding:8px;margin:6px}
+  </style>
+</head>
+<body>
+
+  <h2>Ex 71 — Verificar se é Primo</h2>
+  <input type="number" id="num" placeholder="Digite um número">
+  <button onclick="verificarPrimo()">Verificar</button>
+  <p id="res"></p>
+
+  <script>
+    function verificarPrimo(){
+      let n = parseInt(num.value);
+      if(n <= 1){ res.innerText = "Digite número maior que 1"; return; }
+      let primo = true;
+      for(let i = 2; i <= Math.sqrt(n); i++){
+        if(n % i === 0){ primo = false; break; }
+      }
+      res.innerText = primo ? `${n} é primo` : `${n} não é primo`;
+    }
+  </script>
+
+</body>
+</html>

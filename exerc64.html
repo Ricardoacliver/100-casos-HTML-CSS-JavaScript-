@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 64 - Tabuada até N</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Tabuada até N</h2>
+<input type="number" id="num" placeholder="Número base">
+<input type="number" id="limite" placeholder="Limite">
+<br>
+<button onclick="gerar()">Gerar Tabuada</button>
+<p id="resultado"></p>
+
+<script>
+function gerar(){
+  const n=parseInt(document.getElementById("num").value);
+  const limite=parseInt(document.getElementById("limite").value);
+  if(isNaN(n)||isNaN(limite)||limite<=0){document.getElementById("resultado").innerText="Informe valores válidos.";return;}
+  let out="";
+  for(let i=1;i<=limite;i++) out+=`${n} x ${i} = ${n*i}<br>`;
+  document.getElementById("resultado").innerHTML=out;
+}
+</script>
+</body>
+</html>

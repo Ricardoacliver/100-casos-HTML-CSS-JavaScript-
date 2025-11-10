@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 21 - Procurar Nome</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Procurar Nome</h2>
+  <input type="text" id="nomes" placeholder="Digite 10 nomes separados por vírgula">
+  <br>
+  <input type="text" id="procurado" placeholder="Digite o nome a procurar">
+  <br>
+  <button onclick="procurar()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function procurar() {
+      let nomes = document.getElementById("nomes").value.split(",").map(n => n.trim().toLowerCase());
+      let nomeProcurado = document.getElementById("procurado").value.trim().toLowerCase();
+
+      if (nomeProcurado === "" || nomes.length < 1) {
+        document.getElementById("resultado").innerText = "Preencha corretamente todos os campos!";
+        return;
+      }
+
+      let achou = nomes.includes(nomeProcurado);
+      document.getElementById("resultado").innerText = achou ? "ACHEI ✅" : "NÃO ACHEI ❌";
+    }
+  </script>
+
+</body>
+</html>

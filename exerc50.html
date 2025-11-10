@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 50 - Média de Diária</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Média de Diárias de Hotéis</h2>
+<input type="text" id="valores" placeholder="Ex: 200, 300, 250, 150">
+<br>
+<button onclick="calcular()">Calcular Média</button>
+<p id="resultado"></p>
+
+<script>
+function calcular(){
+  const lista=document.getElementById("valores").value.split(",").map(v=>parseFloat(v.trim())).filter(v=>!isNaN(v));
+  if(lista.length===0){document.getElementById("resultado").innerText="Insira valores válidos.";return;}
+  const media=lista.reduce((a,b)=>a+b,0)/lista.length;
+  document.getElementById("resultado").innerText=`Média das diárias: R$${media.toFixed(2)}`;
+}
+</script>
+</body>
+</html>

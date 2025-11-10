@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 38 - Fatorial</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Fatorial de um Número</h2>
+<input type="number" id="num" placeholder="Digite um número">
+<br>
+<button onclick="calcular()">Calcular</button>
+<p id="resultado"></p>
+
+<script>
+function calcular(){
+  const n=parseInt(document.getElementById("num").value);
+  if(isNaN(n)||n<0){document.getElementById("resultado").innerText="Digite um número válido!";return;}
+  let fat=1;
+  for(let i=2;i<=n;i++) fat*=i;
+  document.getElementById("resultado").innerText=`${n}! = ${fat}`;
+}
+</script>
+</body>
+</html>

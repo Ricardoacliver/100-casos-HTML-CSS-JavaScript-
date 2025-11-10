@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 58 - Divisíveis por 4</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Números Divisíveis por 4 (1 a 200)</h2>
+<button onclick="mostrar()">Mostrar</button>
+<p id="resultado"></p>
+
+<script>
+function mostrar(){
+  let lista=[];
+  for(let i=1;i<=200;i++){if(i%4===0)lista.push(i);}
+  document.getElementById("resultado").innerText=lista.join(", ");
+}
+</script>
+</body>
+</html>

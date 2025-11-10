@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Ex 67 - Soma Pares</title>
+  <style>
+    body{font-family:Arial;text-align:center;padding:40px}
+    input,button{padding:8px;margin:6px}
+  </style>
+</head>
+<body>
+  <h2>Ex 67 — Soma dos pares até N</h2>
+  <input type="number" id="n" placeholder="Digite N">
+  <button onclick="somaPares()">Calcular</button>
+  <p id="out"></p>
+
+  <script>
+    function somaPares(){
+      let N = parseInt(document.getElementById("n").value);
+      if(isNaN(N) || N < 1){ out.innerText = "Digite N ≥ 1"; return; }
+      let soma = 0;
+      for(let i=2;i<=N;i+=2) soma += i;
+      out.innerText = `Soma dos pares 1..${N} = ${soma}`;
+    }
+  </script>
+</body>
+</html>

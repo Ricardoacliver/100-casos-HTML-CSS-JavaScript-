@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 8 - Soma de 1 a N</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Soma dos Números de 1 a N</h2>
+  <input type="number" id="num" placeholder="Digite N">
+  <button onclick="somar()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function somar() {
+      let n = parseInt(document.getElementById("num").value);
+      let soma = 0;
+      for (let i = 1; i <= n; i++) soma += i;
+      document.getElementById("resultado").innerHTML = `Soma = ${soma}`;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 39 - Massa Radioativa</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Massa Radioativa</h2>
+<input type="number" id="massa" placeholder="Massa inicial (g)">
+<br>
+<button onclick="decair()">Calcular Tempo</button>
+<p id="resultado"></p>
+
+<script>
+function decair(){
+  let massa=parseFloat(document.getElementById("massa").value);
+  if(isNaN(massa)||massa<=0){document.getElementById("resultado").innerText="Insira uma massa válida.";return;}
+  let tempo=0;
+  while(massa>=0.05){massa/=2;tempo+=50;}
+  document.getElementById("resultado").innerHTML=`Tempo necessário: ${tempo} segundos<br>Massa final: ${massa.toFixed(4)} g`;
+}
+</script>
+</body>
+</html>

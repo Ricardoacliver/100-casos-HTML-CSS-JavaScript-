@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 56 - Desconto em Produto</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Desconto em Produtos</h2>
+<input type="number" id="preco" placeholder="Preço do produto">
+<input type="number" id="desc" placeholder="Desconto (%)">
+<br>
+<button onclick="calcular()">Calcular</button>
+<p id="resultado"></p>
+
+<script>
+function calcular(){
+  const preco=parseFloat(document.getElementById("preco").value);
+  const desc=parseFloat(document.getElementById("desc").value);
+  if(isNaN(preco)||isNaN(desc)||preco<=0||desc<0){document.getElementById("resultado").innerText="Dados inválidos.";return;}
+  const final=preco-(preco*desc/100);
+  document.getElementById("resultado").innerText=`Preço com desconto: R$${final.toFixed(2)}`;
+}
+</script>
+</body>
+</html>

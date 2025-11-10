@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ex 75 - Palíndromo</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px}
+    input,button{padding:8px;margin:6px}
+  </style>
+</head>
+<body>
+
+  <h2>Ex 75 — Verificar Palíndromo</h2>
+  <input id="txt" placeholder="Digite uma palavra">
+  <button onclick="verificar()">Verificar</button>
+  <p id="res"></p>
+
+  <script>
+    function verificar(){
+      let t = txt.value.toLowerCase().replace(/ /g,'');
+      let inv = t.split('').reverse().join('');
+      res.innerText = t === inv ? "É palíndromo" : "Não é palíndromo";
+    }
+  </script>
+
+</body>
+</html>

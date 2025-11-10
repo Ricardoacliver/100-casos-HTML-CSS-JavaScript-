@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 92</title>
+</head>
+<body>
+  <input type="text" id="texto" placeholder="Digite uma frase">
+  <button onclick="verificar()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function verificar() {
+      const txt = document.getElementById("texto").value;
+      if (txt.toLowerCase().includes("javascript")) {
+        document.getElementById("resultado").innerText = "A frase contém JavaScript!";
+      } else {
+        document.getElementById("resultado").innerText = "A frase não contém JavaScript.";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 99</title>
+</head>
+<body>
+  <input type="text" id="frase" placeholder="Digite uma frase">
+  <button onclick="contar()">Contar palavras</button>
+  <p id="resultado"></p>
+
+  <script>
+    function contar() {
+      const frase = document.getElementById("frase").value.trim();
+      const palavras = frase.split(/\s+/);
+      document.getElementById("resultado").innerText =
+        "Total de palavras: " + (frase ? palavras.length : 0);
+    }
+  </script>
+</body>
+</html>

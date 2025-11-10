@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ex 72 - Inverter Texto</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px}
+    input,button{padding:8px;margin:6px}
+  </style>
+</head>
+<body>
+
+  <h2>Ex 72 — Inverter um Texto</h2>
+  <input id="texto" placeholder="Digite algo">
+  <button onclick="inverter()">Inverter</button>
+  <p id="res"></p>
+
+  <script>
+    function inverter(){
+      let txt = texto.value;
+      res.innerText = txt.split('').reverse().join('');
+    }
+  </script>
+
+</body>
+</html>

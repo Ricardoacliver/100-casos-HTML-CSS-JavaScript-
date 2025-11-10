@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 95</title>
+</head>
+<body>
+  <p id="texto">Clique no botão para mudar minha cor!</p>
+  <button onclick="mudarCor()">Mudar cor</button>
+
+  <script>
+    function mudarCor() {
+      const cores = ["red", "green", "blue", "purple", "orange"];
+      const aleatoria = cores[Math.floor(Math.random() * cores.length)];
+      document.getElementById("texto").style.color = aleatoria;
+    }
+  </script>
+</body>
+</html>

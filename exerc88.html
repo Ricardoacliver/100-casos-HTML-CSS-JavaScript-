@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 88</title>
+</head>
+<body>
+  <input type="number" id="a" placeholder="Número 1">
+  <input type="number" id="b" placeholder="Número 2">
+  <button onclick="somar()">Somar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function somar() {
+      const a = Number(document.getElementById("a").value);
+      const b = Number(document.getElementById("b").value);
+      document.getElementById("resultado").innerText = "Soma = " + (a + b);
+    }
+  </script>
+</body>
+</html>

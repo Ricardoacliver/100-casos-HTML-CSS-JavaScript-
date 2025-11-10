@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ex 79 - Soma Pares e Ímpares</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px}
+    input,button{padding:8px;margin:6px;width:280px}
+  </style>
+</head>
+<body>
+
+  <h2>Ex 79 — Somar Pares e Ímpares</h2>
+  <input id="lista" placeholder="Ex: 1,2,3,4,5">
+  <button onclick="somar()">Calcular</button>
+  <p id="res"></p>
+
+  <script>
+    function somar(){
+      let arr = lista.value.split(',').map(x=>parseInt(x));
+      let pares = 0, impares = 0;
+      for(let n of arr){
+        if(n % 2 === 0) pares += n; else impares += n;
+      }
+      res.innerText = `Soma pares: ${pares} | Soma ímpares: ${impares}`;
+    }
+  </script>
+
+</body>
+</html>

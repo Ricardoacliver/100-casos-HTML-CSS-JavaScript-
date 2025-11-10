@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 30 – Pares e Soma</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Pares entre 85 e 31</h2>
+<button onclick="calcular()">Calcular</button>
+<p id="resultado"></p>
+
+<script>
+function calcular(){
+  let soma=0;let pares=[];
+  for(let i=85;i>=31;i--){
+    if(i%2===0){pares.push(i);soma+=i;}
+  }
+  document.getElementById("resultado").innerHTML=`${pares.join(", ")}<br><br>Soma = ${soma}`;
+}
+</script>
+</body>
+</html>

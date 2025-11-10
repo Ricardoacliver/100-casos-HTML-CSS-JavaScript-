@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 24 - Ímpares múltiplos de 3</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Soma dos Ímpares Múltiplos de 3 (1 a 500)</h2>
+  <button onclick="calcular()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcular() {
+      let soma = 0;
+      for (let i = 1; i <= 500; i++) {
+        if (i % 2 !== 0 && i % 3 === 0) soma += i;
+      }
+      document.getElementById("resultado").innerText = `Soma = ${soma}`;
+    }
+  </script>
+
+</body>
+</html>

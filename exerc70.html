@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Ex 70 - Valores Únicos</title>
+  <style>
+    body{font-family:Arial;text-align:center;padding:40px}
+    input,button{padding:8px;margin:6px;width:300px}
+  </style>
+</head>
+<body>
+  <h2>Ex 70 — Valores Únicos</h2>
+  <input id="lista" placeholder="Ex: 2,3,2,5,3,6">
+  <br>
+  <button onclick="mostrarUnicos()">Mostrar únicos</button>
+  <p id="out"></p>
+
+  <script>
+    function mostrarUnicos(){
+      let raw = document.getElementById("lista").value.trim();
+      if(!raw){ out.innerText = "Digite algo"; return; }
+      let arr = raw.split(',').map(x=>x.trim()).filter(x=>x!=="");
+      let unicos = [...new Set(arr)];
+      out.innerText = `Únicos: ${unicos.join(', ')}`;
+    }
+  </script>
+</body>
+</html>

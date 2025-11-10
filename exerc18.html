@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 18 - Tabuada Personalizada</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Tabuada Personalizada</h2>
+  <input type="number" id="num" placeholder="Número da tabuada">
+  <input type="number" id="inicio" placeholder="Começar por">
+  <input type="number" id="fim" placeholder="Terminar em">
+  <br>
+  <button onclick="montarTabuada()">Gerar Tabuada</button>
+  <p id="resultado"></p>
+
+  <script>
+    function montarTabuada() {
+      let n = parseInt(document.getElementById("num").value);
+      let inicio = parseInt(document.getElementById("inicio").value);
+      let fim = parseInt(document.getElementById("fim").value);
+
+      if (isNaN(n) || isNaN(inicio) || isNaN(fim)) {
+        document.getElementById("resultado").innerText = "Preencha todos os campos corretamente!";
+        return;
+      }
+      if (fim < inicio) {
+        document.getElementById("resultado").innerText = "O valor final não pode ser menor que o inicial!";
+        return;
+      }
+
+      let saida = `Tabuada de ${n} (de ${inicio} até ${fim}):<br>`;
+      for (let i = inicio; i <= fim; i++) {
+        saida += `${n} x ${i} = ${n * i}<br>`;
+      }
+
+      document.getElementById("resultado").innerHTML = saida;
+    }
+  </script>
+
+</body>
+</html>

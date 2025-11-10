@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 10 - Contar Vogais</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Contar Vogais</h2>
+  <input type="text" id="texto" placeholder="Digite um texto">
+  <button onclick="contarVogais()">Contar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function contarVogais() {
+      let texto = document.getElementById("texto").value.toLowerCase();
+      let contagem = 0;
+      for (let letra of texto) {
+        if ("aeiou".includes(letra)) contagem++;
+      }
+      document.getElementById("resultado").innerHTML = `Total de vogais: ${contagem}`;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Ex 68 - Contar Consoantes</title>
+  <style>
+    body{font-family:Arial;text-align:center;padding:40px}
+    input,button{padding:8px;margin:6px}
+  </style>
+</head>
+<body>
+  <h2>Ex 68 — Contar Consoantes</h2>
+  <input type="text" id="txt" placeholder="Digite um texto">
+  <button onclick="contarConsoantes()">Contar</button>
+  <p id="out"></p>
+
+  <script>
+    function contarConsoantes(){
+      let s = document.getElementById("txt").value.toLowerCase();
+      let cont = 0;
+      for(let ch of s){
+        if(ch >= 'a' && ch <= 'z' && !"aeiou".includes(ch)) cont++;
+      }
+      out.innerText = `Consoantes: ${cont}`;
+    }
+  </script>
+</body>
+</html>

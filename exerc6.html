@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 6 - Fatorial</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+  </style>
+</head>
+<body>
+
+  <h2>Calcular Fatorial</h2>
+  <input type="number" id="num" placeholder="Digite um número">
+  <button onclick="calcularFatorial()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularFatorial() {
+      let n = parseInt(document.getElementById("num").value);
+      let fatorial = 1;
+      for (let i = 1; i <= n; i++) {
+        fatorial *= i;
+      }
+      document.getElementById("resultado").innerHTML = `Fatorial de ${n} é ${fatorial}`;
+    }
+  </script>
+
+</body>
+</html>

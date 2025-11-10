@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ex 74 - Média</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px}
+    input,button{padding:8px;margin:6px;width:280px}
+  </style>
+</head>
+<body>
+
+  <h2>Ex 74 — Média de Lista</h2>
+  <input id="lista" placeholder="Ex: 10,20,30,40">
+  <button onclick="media()">Calcular Média</button>
+  <p id="res"></p>
+
+  <script>
+    function media(){
+      let arr = lista.value.split(',').map(x=>parseFloat(x));
+      if(arr.some(isNaN)){ res.innerText = "Digite apenas números"; return; }
+      let soma = arr.reduce((a,b)=>a+b,0);
+      res.innerText = `Média = ${(soma/arr.length).toFixed(2)}`;
+    }
+  </script>
+
+</body>
+</html>

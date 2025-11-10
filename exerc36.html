@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 36 - Média de Salários</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Média de Salários da Empresa</h2>
+<input type="text" id="func" placeholder="Ex: Ana,2500; José,4000; ...">
+<br>
+<button onclick="calcular()">Calcular</button>
+<p id="resultado"></p>
+
+<script>
+function calcular(){
+  const lista=document.getElementById("func").value.split(";").map(f=>f.trim()).filter(f=>f);
+  if(lista.length===0){document.getElementById("resultado").innerText="Informe funcionários e salários.";return;}
+  let salarios=lista.map(f=>parseFloat(f.split(",")[1]));
+  let media=salarios.reduce((a,b)=>a+b,0)/salarios.length;
+  document.getElementById("resultado").innerHTML=
+    `Média: R$${media.toFixed(2)}<br>Maior: R$${Math.max(...salarios)}<br>Menor: R$${Math.min(...salarios)}`;
+}
+</script>
+</body>
+</html>

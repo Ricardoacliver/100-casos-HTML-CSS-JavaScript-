@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 23 - Triângulo com #</title>
+  <style>
+    body {font-family: Arial; text-align: center; margin-top: 50px;}
+    input, button {padding: 8px; margin: 5px;}
+    pre {text-align: center; font-size: 20px;}
+  </style>
+</head>
+<body>
+
+  <h2>Triângulo com #</h2>
+  <input type="number" id="base" placeholder="Tamanho da base (5-15)">
+  <br>
+  <button onclick="gerar()">Gerar Triângulo</button>
+  <pre id="resultado"></pre>
+
+  <script>
+    function gerar() {
+      let base = parseInt(document.getElementById("base").value);
+      if (isNaN(base) || base < 5 || base > 15) {
+        document.getElementById("resultado").innerText = "Digite um valor entre 5 e 15.";
+        return;
+      }
+      let tri = "";
+      for (let i = 1; i <= base; i += 2) {
+        tri += "#".repeat(i) + "\n";
+      }
+      document.getElementById("resultado").innerText = tri;
+    }
+  </script>
+
+</body>
+</html>

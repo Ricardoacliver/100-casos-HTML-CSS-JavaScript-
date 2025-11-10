@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Ex 69 - Número Perfeito</title>
+  <style>
+    body{font-family:Arial;text-align:center;padding:40px}
+    input,button{padding:8px;margin:6px}
+  </style>
+</head>
+<body>
+  <h2>Ex 69 — Número Perfeito</h2>
+  <input type="number" id="n" placeholder="Digite um número">
+  <button onclick="verificarPerfeito()">Verificar</button>
+  <p id="out"></p>
+
+  <script>
+    function verificarPerfeito(){
+      let n = parseInt(document.getElementById("n").value);
+      if(isNaN(n) || n < 1){ out.innerText = "Digite inteiro ≥ 1"; return; }
+      let soma = 0;
+      for(let i=1;i<=n/2;i++) if(n % i === 0) soma += i;
+      out.innerText = (soma === n) ? `${n} é perfeito` : `${n} não é perfeito`;
+    }
+  </script>
+</body>
+</html>

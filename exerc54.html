@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 54 - Contagem até Número</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Contagem de 1 até o número informado</h2>
+<input type="number" id="num" placeholder="Digite um número positivo">
+<br>
+<button onclick="contar()">Contar</button>
+<p id="resultado"></p>
+
+<script>
+function contar(){
+  const n=parseInt(document.getElementById("num").value);
+  if(isNaN(n)||n<=0){document.getElementById("resultado").innerText="Informe um número positivo.";return;}
+  let seq=[];
+  for(let i=1;i<=n;i++)seq.push(i);
+  document.getElementById("resultado").innerText=seq.join(", ");
+}
+</script>
+</body>
+</html>

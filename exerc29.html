@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 29 – Múltiplos de 7</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Múltiplos de 7 menores que 1000</h2>
+<button onclick="mostrar()">Mostrar</button>
+<p id="resultado"></p>
+
+<script>
+function mostrar(){
+  const mult=[];
+  for(let i=7;i<1000;i+=7){mult.push(i);}
+  document.getElementById("resultado").innerHTML=`${mult.join(", ")}<br><br>Total: ${mult.length}`;
+}
+</script>
+</body>
+</html>

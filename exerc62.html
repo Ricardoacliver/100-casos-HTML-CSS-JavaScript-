@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 62 - Média com While</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Média de Notas (encerra com negativa)</h2>
+<input type="text" id="notas" placeholder="Ex: 10, 15, 20, -1">
+<br>
+<button onclick="calcular()">Calcular Média</button>
+<p id="resultado"></p>
+
+<script>
+function calcular(){
+  const arr=document.getElementById("notas").value.split(",").map(v=>parseFloat(v.trim())).filter(v=>!isNaN(v));
+  let soma=0,cont=0,i=0;
+  while(i<arr.length && arr[i]>=0){
+    soma+=arr[i];cont++;i++;
+  }
+  if(cont===0){document.getElementById("resultado").innerText="Nenhuma nota válida.";return;}
+  document.getElementById("resultado").innerText=`Média: ${(soma/cont).toFixed(2)}`;
+}
+</script>
+</body>
+</html>

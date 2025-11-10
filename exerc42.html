@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 42 - Soma e Média (Sentinela)</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:50px;}
+    input,button{padding:8px;margin:5px;}
+  </style>
+</head>
+<body>
+
+<h2>Soma e Média até 9999</h2>
+<input type="text" id="valores" placeholder="Digite números separados por vírgula">
+<br>
+<button onclick="calcular()">Calcular</button>
+<p id="resultado"></p>
+
+<script>
+function calcular(){
+  let arr=document.getElementById("valores").value.split(",").map(v=>parseFloat(v.trim())).filter(v=>!isNaN(v));
+  if(arr.length===0){document.getElementById("resultado").innerText="Digite pelo menos um número.";return;}
+  let soma=0,cont=0;
+  for(let v of arr){
+    if(v===9999) break;
+    soma+=v;cont++;
+  }
+  let media=cont>0?(soma/cont).toFixed(2):0;
+  document.getElementById("resultado").innerHTML=`Soma: ${soma}<br>Média: ${media}`;
+}
+</script>
+</body>
+</html>
